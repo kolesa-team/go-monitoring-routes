@@ -11,7 +11,7 @@ import (
 	"github.com/zenazn/goji/web"
 )
 
-func Router(m *web.Mux, v interface{}, cn *c.Config, l *logrus.Logger, s func() map[interface{}]interface{}) {
+func Router(m *web.Mux, v interface{}, cn *c.Config, l *logrus.Logger, s func() map[string]interface{}) {
 	// Handle /version route
 	m.Get("/version", func(c web.C, w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("%v", v), http.StatusOK)
