@@ -11,7 +11,7 @@ import (
 	"github.com/zenazn/goji/web"
 )
 
-func Router(m *web.Mux, cn *c.Config, l *logrus.Logger, s func() *map[interface{}]interface{}) {
+func Router(m *web.Mux, cn *c.Config, l *logrus.Logger, s func() map[interface{}]interface{}) {
 	// Handle /config route
 	m.Get("/config", func(c web.C, w http.ResponseWriter, r *http.Request) {
 		http.Error(w, config.Dump(cn), http.StatusOK)
