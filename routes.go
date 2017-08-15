@@ -27,7 +27,7 @@ func NewRouter() *Router {
 }
 
 // Set mux for router
-func (r *Router) Mux(m *Web.Mux) *Router {
+func (r *Router) Mux(m *web.Mux) *Router {
 	r.mux = m
 
 	return r
